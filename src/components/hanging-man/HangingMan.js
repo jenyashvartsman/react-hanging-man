@@ -1,3 +1,5 @@
+import "./HangingMan.css";
+
 function HangingMan() {
   return <div>hanging man</div>;
 }

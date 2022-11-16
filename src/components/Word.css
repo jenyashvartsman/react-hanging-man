@@ -1,0 +1,14 @@
+.word {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 5px 10px;
+  font-size: 64px;
+  position: relative;
+}
+
+.word .word__char {
+  width: 64px;
+  text-align: center;
+  border-bottom: 3px solid #000;
+}

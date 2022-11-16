@@ -1,0 +1,81 @@
+.hanging-man {
+  width: 600px;
+  height: 400px;
+  position: relative;
+}
+
+.hanging-man .line {
+  position: absolute;
+  background: #000;
+  border-radius: 8px;
+  height: 12px;
+  width: 12px;
+}
+
+.hanging-man .pole__base {
+  bottom: 0;
+  left: 150px;
+  width: 120px;
+}
+
+.hanging-man .pole__pole {
+  bottom: 0;
+  left: 204px;
+  height: 400px;
+}
+
+.hanging-man .pole__arch {
+  top: 0;
+  left: 204px;
+  width: 200px;
+}
+
+.hanging-man .pole__rope {
+  top: 0;
+  left: 394px;
+  height: 50px;
+}
+
+.hanging-man .person__head {
+  border: 12px solid #000;
+  border-radius: 50%;
+  background-color: #fff;
+  width: 64px;
+  height: 64px;
+  left: 368px;
+  top: 45px;
+}
+
+.hanging-man .person__body {
+  height: 150px;
+  left: 394px;
+  top: 100px;
+}
+
+.hanging-man .person__hand-left {
+  width: 75px;
+  transform: rotate(-45deg);
+  top: 150px;
+  left: 336px;
+}
+
+.hanging-man .person__hand-right {
+  width: 75px;
+  transform: rotate(225deg);
+  top: 152px;
+  left: 390px;
+}
+
+.hanging-man .person__leg-left {
+  width: 75px;
+  transform: rotate(-45deg);
+  top: 260px;
+  left: 336px;
+}
+
+.hanging-man .person__leg-right {
+  width: 75px;
+  transform: rotate(225deg);
+  top: 260px;
+  left: 390px;
+}

@@ -1,0 +1,11 @@
+.keyboard {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.keyboard__button {
+  width: 64px;
+  height: 64px;
+}

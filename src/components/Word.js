@@ -2,10 +2,10 @@ import "./Word.css";
 
 function Word({ guessedWord }) {
   return (
-    <div className="word">
+    <div className="card word">
       {guessedWord.map((char, i) => (
         <div key={i} className="word__char">
-          {char}
+          <span>{char}</span>
         </div>
       ))}
     </div>

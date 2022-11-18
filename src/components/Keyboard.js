@@ -1,9 +1,11 @@
 import "./Keyboard.css";
 
 function Keyboard({ guessedChars, hangingManStep, enterChar }) {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
   return (
-    <div className="keyboard">
-      {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((char) => (
+    <div className="card keyboard">
+      {letters.split("").map((char) => (
         <button
           className="keyboard__button"
           key={char}

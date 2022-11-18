@@ -6,24 +6,25 @@ import Keyboard from "./components/Keyboard";
 import Word from "./components/Word";
 import words from "./words/words.json";
 
-function getWord() {
-  return words[Math.floor(Math.random() * words.length)]
-    .toUpperCase()
-    .split("");
-}
-
-function getGuessdWord(length) {
-  return Array.from({ length });
-}
-
 function App() {
-  const [wordToGuess, setWordToGuess] = useState(getWord());
-  const [guessedWord, setGuessedWord] = useState(
-    getGuessdWord(wordToGuess.length)
-  );
+  const [wordToGuess, setWordToGuess] = useState(getRandomWord());
+  const [guessedWord, setGuessedWord] = useState(getRandomWordInitGuess());
   const [guessedChars, setGuessedChars] = useState([]);
   const [hangingManStep, setHangingManStep] = useState(0);
 
+  // generate random word
+  function getRandomWord() {
+    return words[Math.floor(Math.random() * words.length)]
+      .toUpperCase()
+      .split("");
+  }
+
+  // init user guess
+  function getRandomWordInitGuess() {
+    return Array.from({ length: wordToGuess.length }, () => undefined);
+  }
+
+  // user entered char
   function enterChar(charEntered) {
     // update word to guess
     wordToGuess.forEach((char, index) => {
@@ -35,16 +36,19 @@ function App() {
       }
     });
 
+    // update steps
     if (!wordToGuess.includes(charEntered)) {
       setHangingManStep((prev) => prev + 1);
     }
 
+    // used chars
     setGuessedChars((prev) => [...prev, charEntered]);
   }
 
+  // create new game
   function newGame() {
-    setWordToGuess(getWord());
-    setGuessedWord(getGuessdWord(wordToGuess.length));
+    setWordToGuess(getRandomWord());
+    setGuessedWord(getRandomWordInitGuess());
     setGuessedChars([]);
     setHangingManStep(0);
   }
@@ -56,7 +60,7 @@ function App() {
         hangingManStep={hangingManStep}
         newGame={newGame}
       />
-      <div className="container">
+      <main className="container">
         <HangingMan hangingManStep={hangingManStep} />
         <Word guessedWord={guessedWord} />
         <Keyboard
@@ -64,7 +68,7 @@ function App() {
           hangingManStep={hangingManStep}
           enterChar={enterChar}
         />
-      </div>
+      </main>
     </>
   );
 }

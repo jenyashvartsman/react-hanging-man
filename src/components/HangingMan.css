@@ -1,12 +1,13 @@
 .hanging-man {
   width: 600px;
   height: 400px;
+  margin: 0 auto;
   position: relative;
 }
 
 .hanging-man .line {
   position: absolute;
-  background: #000;
+  background-color: var(--color4);
   border-radius: 8px;
   height: 12px;
   width: 12px;
@@ -42,9 +43,9 @@
 }
 
 .hanging-man .person__head {
-  border: 12px solid #000;
+  border: 12px solid var(--color4);
   border-radius: 50%;
-  background-color: #fff;
+  background-color: transparent;
   width: 64px;
   height: 64px;
   left: 368px;

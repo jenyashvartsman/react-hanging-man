@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   gap: 15px;
-  background-color: #eee;
+  height: 80px;
+  background-color: var(--color2);
   padding: 10px 0;
 }
